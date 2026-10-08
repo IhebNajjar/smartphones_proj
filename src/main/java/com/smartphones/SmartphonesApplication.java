@@ -5,6 +5,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.data.rest.core.config.RepositoryRestConfiguration;
+import com.smartphones.entities.Marque;
 import com.smartphones.entities.Smartphone;
 
 @SpringBootApplication
@@ -19,6 +20,6 @@ public class SmartphonesApplication implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        repositoryRestConfiguration.exposeIdsFor(Smartphone.class);
+        repositoryRestConfiguration.exposeIdsFor(Smartphone.class, Marque.class);
     }
 }
